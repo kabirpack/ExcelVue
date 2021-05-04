@@ -23,194 +23,285 @@
     ?>
 
     <style>
-    .container {
+    /* table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+table tbody {
+    display: table;
+    width: 100%;
+} */
+    /* .container {
         background: url("./assets/purpledradient.png");
         background-repeat: no-repeat;
         background-position: center;
-    }
+    } */
 
-    body {
+    /* body {
         background: url('https://source.unsplash.com/WEQbe2jBg40/600x1200');
-    }
+    } */
     </style>
 </head>
 
 <body>
 
-    <form method="POST" id="customer_mainform">
+    <div style="margin-top:3%"></div>
+    <div class="container col-12" >
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-link active" id="nav-mainform-tab" data-toggle="tab" href="#nav-mainform" role="tab"
+                    aria-controls="nav-mainform" aria-selected="true">Customer Details</a>
+                <a class="nav-link" id="nav-dtable-tab" data-toggle="tab" href="#nav-dtable" role="tab"
+                    aria-dtabletrols="nav-dtable" aria-selected="false">Data Table</a>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
 
 
-        <div class="container" style="padding:10px 10px;">
-            <fieldset class="scheduler-border">
-                <legend class="scheduler-border">Customer Details</legend>
-                <div class="row justify-content-around">
-                    <div class="col-3">
-                        <label>Business</label>
-                        <input type="text" class="form-control" name="business" id="bus_name">
-                    </div>
-                    <div class="col-3">
-                        <label>Product</label>
-                        <input type="text" class="form-control" name="product" id="prod_name">
-                    </div>
-                    <div class="col-3">
-                        <label>Country</label>
-                        <input type="text" class="form-control" name="country" id="country">
-                    </div>
-                    <div class="col-3">
-                        <label>Type</label>
-                        <input type="text" class="form-control" name="bus_type" id="bus_type">
-                    </div>
-                </div><br>
-                <div class="row justify-content-around">
-                    <div class="col-3">
-                        <label>Comments</label>
-                        <textarea class="form-control" rows="1" name="comments" id="comment"></textarea>
-                    </div>
-                    <div class="col-3">
-                        <label>Key-Contact(Name)</label>
-                        <input type="text" class="form-control" name="key_contact" id="key_contact">
-                    </div>
-                    <div class="col-3">
-                        <label>Designation</label>
-                        <input type="text" class="form-control" name="designation" id="designation"></input>
-                    </div>
-                    <div class="col-3">
-                        <label>Tel</label>
-                        <input type="text" class="form-control" name="tel" id="tel"></input>
-                    </div>
-                </div><br>
-                <div class="row justify-content-around">
-                    <div class="col-3">
-                        <label>Mobile</label>
-                        <input class="form-control" type="text" name="mobile" id="mobile"></textarea>
-                    </div>
-
-                    <div class="col-3">
-                        <label>Email</label>
-                        <input type="text" class="form-control" name="email" id="email">
-                    </div>
-                    <div class="col-3">
-                        <label>Remarks</label>
-                        <textarea class="form-control" rows="1" name="remarks" id="remarks"></textarea>
-                    </div>
-                    <div class="col-3">
-                        <label>Status</label>
-                        <textarea class="form-control" rows="1" name="status" id="status"></textarea>
-                    </div>
+        <div class="tab-pane fade show active" id="nav-mainform" role="tabpanel" aria-labelledby="nav-mainform-tab">
+        <form method="POST" id="customer_mainform">
 
 
-                    <div class="container" style="padding:10px 10px;">
-                        <div class="row justify-content-around" style="padding: 10px 10px;">
+            <div class="container" style="padding:10px 10px;">
+                <fieldset class="scheduler-border">
+                    <legend class="scheduler-border">Customer Details</legend>
+                    <div class="row justify-content-around">
+                        <div class="col-3">
+                            <label>Business</label>
+                            <input type="text" class="form-control" name="business" id="bus_name">
+                        </div>
+                        <div class="col-3">
+                            <label>Product</label>
+                            <input type="text" class="form-control" name="product" id="prod_name">
+                        </div>
+                        <div class="col-3">
+                            <label>Country</label>
+                            <input type="text" class="form-control" name="country" id="country">
+                        </div>
+                        <div class="col-3">
+                            <label>Type</label>
+                            <input type="text" class="form-control" name="bus_type" id="bus_type">
+                        </div>
+                    </div><br>
+                    <div class="row justify-content-around">
+                        <div class="col-3">
+                            <label>Comments</label>
+                            <textarea class="form-control" rows="1" name="comments" id="comment"></textarea>
+                        </div>
+                        <div class="col-3">
+                            <label>Key-Contact(Name)</label>
+                            <input type="text" class="form-control" name="key_contact" id="key_contact">
+                        </div>
+                        <div class="col-3">
+                            <label>Designation</label>
+                            <input type="text" class="form-control" name="designation" id="designation"></input>
+                        </div>
+                        <div class="col-3">
+                            <label>Tel</label>
+                            <input type="text" class="form-control" name="tel" id="tel"></input>
+                        </div>
+                    </div><br>
+                    <div class="row justify-content-around">
+                        <div class="col-3">
+                            <label>Mobile</label>
+                            <input class="form-control" type="text" name="mobile" id="mobile"></textarea>
+                        </div>
 
-                            <div class="col-3">
-                                <label>Date</label>
-                                <div class="input-group date" id="cus_datetimepicker" data-target-input="nearest">
-                                    <input type="text" class="form-control datetimepicker-input"
-                                        data-toggle="datetimepicker" data-target="#cus_datetimepicker"
-                                        name="data_time" id="data_time" />
-                                    <div class="input-group-append" data-target="#cus_datetimepicker"
-                                        data-toggle="datetimepicker">
-                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                        <div class="col-3">
+                            <label>Email</label>
+                            <input type="text" class="form-control" name="email" id="email">
+                        </div>
+                        <div class="col-3">
+                            <label>Remarks</label>
+                            <textarea class="form-control" rows="1" name="remarks" id="remarks"></textarea>
+                        </div>
+                        <div class="col-3">
+                            <label>Status</label>
+                            <textarea class="form-control" rows="1" name="status" id="status"></textarea>
+                        </div>
+
+
+                        <div class="container" style="padding:10px 10px;">
+                            <div class="row justify-content-around" style="padding: 10px 10px;">
+
+                                <div class="col-3">
+                                    <label>Date</label>
+                                    <div class="input-group date" id="cus_datetimepicker" data-target-input="nearest">
+                                        <input type="text" class="form-control datetimepicker-input"
+                                            data-toggle="datetimepicker" data-target="#cus_datetimepicker"
+                                            name="data_time" id="data_time" />
+                                        <div class="input-group-append" data-target="#cus_datetimepicker"
+                                            data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-9">
-                                <label>Feedback</label>
-                                <textarea class="form-control" rows="1" name="feedback" id="feedback"></textarea>
+                                <div class="col-7">
+                                    <label>Feedback</label>
+                                    <textarea class="form-control" rows="1" name="feedback" id="feedback"></textarea>
+                                </div>
+                                <div class="col-2">
+                                    <br>
+                                    <button type="submit" class="btn btn-success"><i class="fa fa-save"></i>
+                                    Follow up</button>
+                                </div>
+
                             </div>
                         </div>
-                    </div>
 
 
-                    <div class="form-group row justify-content-center">
-                        <center>
-                            <button type="submit" class="btn btn-success"><i class="fa fa-save"></i>
-                                &nbsp;&nbsp;Save</button>
-                            <button class="btn btn-danger" type="button" id="cs_print-now"><i class="fa fa-repeat"
-                                    aria-hidden="true"></i>&nbsp;Reset</button>
-                        </center>
+                        <div class="form-group row justify-content-center">
+                            <center>
+                                <button type="submit" class="btn btn-success"><i class="fa fa-save"></i>
+                                    &nbsp;&nbsp;Save</button>
+                                <button class="btn btn-danger" type="button" id="cs_print-now"><i class="fa fa-repeat"
+                                        aria-hidden="true"></i>&nbsp;Reset</button>
+                            </center>
+                        </div>
                     </div>
-                </div>
-            </fieldset>
+                </fieldset>
+            </div>
+        <form>
+    </div>
+
+        <div class="tab-pane fade d-flex justify-content-center " id="nav-dtable" role="tabpanel" aria-labelledby="nav-dtable-tab">
+
+            <div class="col-md-12" id="warddiv" class="d-flex justify-content-center">
+                <table class="table table-hover table-bordered table-striped table-responsive-stack" id="cust_table">
+                    <thead class="thead-dark" style="overflow-x: auto">
+                        <tr>
+                            <th>Business</th>
+                            <th>Product</th>
+                            <th>Country</th>
+                            <th>Type</th>
+                            <th>Comments</th>
+                            <th>Key-Contact</th>
+                            <th>Designation</th>
+                            <th>Tel</th>
+                            <th>Mobile</th>
+                            <th>Email</th>
+                            <th>Remarks</th>
+                            <th>Status</th>
+                            <th>Feedback</th>
+                            <th>Date</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody id="tab_body">
+                    </tbody>
+                </table>
+            </div>
         </div>
 
-        <div class="col-md-12" id="warddiv" class="d-flex justify-content-center">
-                        <table class="table table-hover table-bordered table-striped table-responsive-stack" id="cust_table">
-                            <thead class="thead-dark">
-                            <tr>
-                                <th>Business</th>
-                                <th>Product</th>
-                                <th>Country</th>
-                                <th>Type</th>
-                                <th>Comments</th>
-                                <th>Key-Contact</th>
-                                <th>Designation</th>
-                                <th>Tel</th>
-                                <th>Mobile</th>
-                                <th>Email</th>
-                                <th>Remarks</th>
-                                <th>Status</th>
-                                <th>Feedback</th>
-                                <th>Date</th>
+    </div>
+    </div>
 
-
-                            </tr>
-                            </thead>
-                            <tbody  id="tab_body">
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <form>
-
-    <!-- External Scripts -->
-    <script src="./assets/js/jquery.min.js"></script> 
+        <!-- External Scripts -->
+        <script src="./assets/js/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js" integrity="sha512-2JBCbWoMJPH+Uj7Wq5OLub8E5edWHlTM4ar/YJkZh3plwB2INhhOC3eDoqHm1Za/ZOSksrLlURLoyXVdfQXqwg==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+            integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+            crossorigin="anonymous"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js"
+            integrity="sha512-2JBCbWoMJPH+Uj7Wq5OLub8E5edWHlTM4ar/YJkZh3plwB2INhhOC3eDoqHm1Za/ZOSksrLlURLoyXVdfQXqwg=="
+            crossorigin="anonymous"></script>
         <script type="text/javascript" src="./assets/DataTables/datatables.min.js"></script>
-    <!-- External Scripts -->
+        <!-- External Scripts -->
 
 
-<script>
-            
-$('#customer_mainform').on("submit", function(event){
-        event.preventDefault();
-        var id = <?php echo $_SESSION['id'] ?>;
-        var datapass=$('#customer_mainform').serializeArray();
-        datapass.push({"name":"filefrom","value":"mainform"});
-        datapass.push({"name":"id","value":id});
-        console.log(datapass);
+        <script>
+        $('#customer_mainform').on("submit", function(event) {
+            event.preventDefault();
+            var id = <?php echo $_SESSION['id'] ?>;
+            var datapass = $('#customer_mainform').serializeArray();
+            datapass.push({
+                "name": "filefrom",
+                "value": "mainform"
+            });
+            datapass.push({
+                "name": "id",
+                "value": id
+            });
+            console.log(datapass);
 
-        $.ajax({
+            $.ajax({
                 url: "postdetails.php",
                 type: "POST",
                 data: datapass,
                 success: function(d) {
-                    
-                    if(d != ''){
-                      Notiflix.Notify.Failure('Data Saved');
+
+                    if (d != '') {
+                        Notiflix.Notify.Success('Data Saved');
+                    } else {
+                        Notiflix.Notify.Failure('Something went wrong');
                     }
-                    else{
-                      Notiflix.Notify.Failure('Something went wrong');
-                    }
-                    getDetails(id);
-                
-            }
+                    getdetails();
+
+                }
+            });
+
+
+
+
         });
 
+        function getdetails() {
+            var id = <?php echo $_SESSION['id'] ?>;
+            //var senddata = array();
+            //senddata.push({"name":"getdata","value":"main_form"});
+            var senddata = {
+                'getdata': "main_form",
+                'id': id
+            };
+            // senddata.push({"name":"id","value":id});
+            $.ajax({
+                url: "getdetails.php",
+                type: "POST",
+                data: senddata,
+                success: function(d) {
 
+                    if ($.fn.DataTable.isDataTable("#cust_table")) {
+                        console.log('It is data table');
 
+                        $("#cust_table").DataTable().clear().destroy();
+                    }
+                    $("#tab_body").html("");
+                    $("#tab_body").html(d);
 
-});
+                    var tb = $("#cust_table").DataTable({
+                        "bPaginate": false,
+                        "bInfo": true,
+                        "bSort": false,
+                        "dom": 'Blfrtip',
+                        "destroy": true,
+                        "scrollY": "235px",
+                        "fixedHeader": false,
+                        "scrollCollapse": true,
+                        "paging": true,
+                        "buttons": [{
+                            extend: 'print',
+                            className: "primary",
+                            attr: {
+                                id: 'printtabl'
+                            },
+                            messageTop: "Customer Table",
+                            title: '<center>Customer Details</center>',
+                        }],
+                    });
 
+                }
+            });
 
+        }
 
-
-
-</script>
+        function mainform_populate(id) {
+            console.log(id);
+        }
+        </script>
 
 
 </body>

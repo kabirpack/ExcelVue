@@ -1,7 +1,11 @@
 <?php
+include_once('kab_connect.php');
 
 
-if($_POST['filefrom']=='Vitals')
+if(isset($_POST['filefrom']))
+{
+
+if($_POST['filefrom']=='mainform')
 	{
         $user_id=$_POST['id'];
 		$business=$_POST['business'];
@@ -18,15 +22,16 @@ if($_POST['filefrom']=='Vitals')
 		$status=$_POST['status'];
 		$data_time=$_POST['data_time'];
 		$feedback=$_POST['feedback'];
-        $datetime=date_create_from_format('d/m/Y H:i A',$data_time);
+        $datetime=date_create_from_format('m/d/Y H:i A',$data_time);
         $newdate = date("Y-m-d H:i", $datetime->getTimestamp()); 
-		$sql="INSERT INTO `excel_main` (`user_id`, `business`, `product`, `country`, `type`, `comments`, `key_contact`, `designation`, `tel`, `mobile`, `email`, `remarks`, `status`, `data_time`, `feedback`) 
-		VALUES ('$user_id', '$business', '$product', '$country', '$type', '$comments', '$key_contact', '$designation', '$tel', '$mobile', '$email', '$remarks', '$status', '$newdate','$feedback');";
-        $con->query($sql);
-        echo $sql;
+		$sql="INSERT INTO `excel_main` (`id`, `user_id`, `business`, `product`, `country`, `type`, `comments`, `key_contact`, `designation`, `tel`, `mobile`, `email`, `remarks`, `status`, `data_time`, `feedback`) 
+		VALUES (NULL, '$user_id', '$business', '$product', '$country', '$type', '$comments', '$key_contact', '$designation', '$tel', '$mobile', '$email', '$remarks', '$status', '$newdate','$feedback');";
+        $response=$con->query($sql);
+        echo $response;   
+    
     }
 
-
+}
 
 
 
